@@ -9,9 +9,9 @@ const pageStyle = isActive =>
 const Pagination = ({ index }) => {
     return (
         <View style={styles.pageContainer}>
-
             <View style={styles.page}></View>
             <View style={styles.page}></View>
+            
             <View style={styles.page}></View>
         </View>
     )
