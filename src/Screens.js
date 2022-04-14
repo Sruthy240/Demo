@@ -11,7 +11,6 @@ const Pagination = ({ index }) => {
         <View style={styles.pageContainer}>
             <View style={styles.page}></View>
             <View style={styles.page}></View>
-            
             <View style={styles.page}></View>
         </View>
     )
@@ -70,10 +69,10 @@ export default function Screens() {
                 </View>
             </LinearGradient>
             <View style={{ alignItems: 'center', marginTop: 50, }}>
-                <Text style={{ fontSize: 28.43 , fontFamily: 'MontserratAlternates-Regular' , }}> {item.title} </Text>
+                <Text style={{ fontSize: 28.43, fontFamily: 'MontserratAlternates-Regular', }}> {item.title} </Text>
             </View>
             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={{ fontSize: 16, textAlign: 'center', padding: 40 ,fontFamily: 'MontserratAlternates-Regular' }}> {item.description}</Text>
+                <Text style={{ fontSize: 16, textAlign: 'center', padding: 40, fontFamily: 'MontserratAlternates-Regular' }}> {item.description}</Text>
             </View>
         </View>
     )
@@ -89,8 +88,9 @@ export default function Screens() {
         })
     }
     return (
-        <View style={{ backgroundColor: '#fff', alignItems: 'center', marginTop: 150, height: height * 0.75 }}>
-            <FlatList
+
+        <View style={{ alignItems: 'center', }}>
+            <FlatList style={{ marginTop: 150, height: height * 0.65, }}
                 ref={welcomeList}
                 data={DATA} horizontal={true}
                 renderItem={renderItem}
@@ -99,8 +99,9 @@ export default function Screens() {
                 onViewableItemsChanged={onViewRef.current}
             />
             <Pagination index={welcomeListIndex} />
-            <TouchableOpacity onPress={() => pageScroll()}>
-                <Text> Skip </Text>
+            <TouchableOpacity style={{}}
+                onPress={() => pageScroll()}>
+                <Text style={{ fontFamily: 'MontserratAlternates-Regular', fontSize: 16, color: '#C8C8E9' }}> Skip </Text>
             </TouchableOpacity>
             <View>
             </View>
@@ -152,13 +153,12 @@ const styles = StyleSheet.create({
     },
     pageContainer: {
         flexDirection: 'row',
-        marginTop: 20,
-        marginBottom: 30
+        marginVertical: 40
     },
     page: {
         height: height * 0.006,
         width: width * 0.093,
-        backgroundColor: "#7ad6c5",
+        backgroundColor: "#349EC6",
         borderRadius: 32,
         marginHorizontal: 5
     }
