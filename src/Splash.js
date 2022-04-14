@@ -23,7 +23,6 @@ class Splash extends Component {
             <Image style={{ position: 'absolute', bottom: 0, right: 0, width: width * 0.5, height: width * 0.5, resizeMode: 'contain' }}
                 source={require('./assets/Mask2.png')} />
         </LinearGradient>
-
         )
     }
 }
