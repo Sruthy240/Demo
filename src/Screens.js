@@ -15,7 +15,7 @@ const Pagination = ({ index }) => {
         </View>
     )
 }
-export default function Screens() {
+export default function Screens(props) {
     // console.log(width * 0.093)
     const DATA = [
         {
@@ -98,13 +98,27 @@ export default function Screens() {
                 viewabilityConfig={viewConfigRef.current}
                 onViewableItemsChanged={onViewRef.current}
             />
-            <Pagination index={welcomeListIndex} />
-            <TouchableOpacity style={{}}
+            {/* <Pagination index={welcomeListIndex} /> */}
+            <FlatList
+                data={DATA}
+                horizontal={true}
+                renderItem={({ item, index }) => {
+                    console.log(index, welcomeListIndex);
+                    return (
+                        <View style={styles.pageContainer}>
+                            <View style={index == welcomeListIndex ? styles.pageEnable : styles.pageDisable}></View>
+                        </View>
+                    )
+                }} />
+            {welcomeListIndex == 2 ? <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.button} colors={['#2ECBAA', '#33A5C2', '#387FDA']} >
+                <TouchableOpacity onPress={()=> props.navigation.navigate('Service') }>
+                    <Text style={styles.buttonText}> Start </Text>
+                </TouchableOpacity>
+            </LinearGradient> : <TouchableOpacity
                 onPress={() => pageScroll()}>
                 <Text style={{ fontFamily: 'MontserratAlternates-Regular', fontSize: 16, color: '#C8C8E9' }}> Skip </Text>
-            </TouchableOpacity>
-            <View>
-            </View>
+            </TouchableOpacity>}
+
         </View>
     )
 }
@@ -125,41 +139,42 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 14
     },
-    button: {
-        height: 50,
-        width: width * 0.8,
-        borderRadius: 30,
-        backgroundColor: "#7ad6c5",
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 40
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 18
-    },
-    button1: {
-        height: 50,
-        width: width * 0.8,
-        borderRadius: 30,
-        backgroundColor: "#7ad6c5",
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 40
-    },
-    buttonText1: {
-        color: 'white',
-        fontSize: 18
-    },
+
     pageContainer: {
         flexDirection: 'row',
-        marginVertical: 40
+        marginVertical: 30
     },
-    page: {
+    pageEnable: {
         height: height * 0.006,
         width: width * 0.093,
         backgroundColor: "#349EC6",
         borderRadius: 32,
         marginHorizontal: 5
+    },
+    pageDisable: {
+        height: height * 0.006,
+        width: width * 0.093,
+        backgroundColor: "#FFF",
+        borderRadius: 32,
+        marginHorizontal: 5
+
+    },
+    button: {
+        height: height * 0.06,
+        width: width * 0.75,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#2ECBAA',
+        borderRadius: 25,
+        // marginTop: height * 0.01,
+        alignSelf: 'center',
+        
+    },
+    buttonText: {
+        color: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 16,
+        fontFamily: 'MontserratAlternates-Regular',
     }
 })

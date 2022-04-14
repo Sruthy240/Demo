@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Image, Text, SafeAreaView, TouchableHighlight, FlatList } from 'react-native'
+import React, { Component, useState, useRef } from 'react'
+import { View, StyleSheet, Image, Text, SafeAreaView, TouchableOpacity, FlatList } from 'react-native'
 import Header from './Components/Header'
 import bookMarkImage from './assets/bk1.png'
 import dotImage from './assets/dot.png'
 import { height, width } from './Constant/constant'
 import LinearGradient from 'react-native-linear-gradient'
 import { Item } from 'react-native-paper/lib/typescript/components/List/List'
-export default function Service() {
+export default function Service(props) {
     const DATA = [
         {
             id: 1,
@@ -50,7 +50,9 @@ export default function Service() {
                     <Image style={{ width: item.imageWidth, height: item.imageHeight }}
                         source={item.image} />
                 </LinearGradient>
-                <Text style={{ fontSize: 20, fontFamily: 'MontserratAlternates-Semibold', paddingHorizontal: 40 }} > {item.title}</Text>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Companies')}>
+                    <Text style={{ fontSize: 20, fontFamily: 'MontserratAlternates-Semibold', paddingHorizontal: 40 }} > {item.title}</Text>
+                </TouchableOpacity>
             </View>
         )
     }

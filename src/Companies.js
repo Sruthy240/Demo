@@ -45,30 +45,25 @@ export default function Companies(props) {
         },
     ];
     const renderItem = ({ item, index }) => {
-   
-       return <View style={styles.itemContainer}>
+        return <View style={styles.itemContainer}>
             <Image style={{ height: 90, width: 90 }}
                 source={item.image} />
-            <Text style={{ fontFamily: 'MontserratAlternates-Medium', fontWeight: 'bold', fontSize: 16 }}>{item.title}</Text>
+        <TouchableOpacity onPress={ () => props.navigation.navigate('Workers')}>
+        <Text style={{ fontFamily: 'MontserratAlternates-Medium', fontWeight: 'bold', fontSize: 16 }}>{item.title}</Text>
+        </TouchableOpacity>
         </View>
-     }
+    }
     return (
         <View style={styles.container}>
-            <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0.5, y: 1}} colors={['#2ECBAA', '#339DC9', '#367FDD']}
+            <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0.5, y: 1 }} colors={['#2ECBAA', '#339DC9', '#367FDD']}
                 style={[styles.blueContainer,]}>
-                <View style={{ flexDirection: 'row', width : width, paddingHorizontal : width * 0.05, alignItems : 'center', justifyContent :'space-between', height : height * 0.07}}>
-                    {/* <View style={{ top: 25, position: 'absolute', right: 220 }}> */}
-                        <Image style={{ height: 22 }} source={require('./assets/arrow1.png')} />
-                    {/* </View> */}
-                    {/* <View style={{ }}> */}
-                        <Text style={{ color: '#fff', fontSize: 22, fontFamily: 'MontserratAlternates-Medium' , }}> Companies </Text>
+                <View style={{ flexDirection: 'row', width: width, paddingHorizontal: width * 0.05, alignItems: 'center', justifyContent: 'space-between', height: height * 0.07 }}>
 
-                    {/* </View> */}
-                    {/* <View style={{top: 25, position: 'absolute', left: 220  }}> */}
-                        <Image source={require('./assets/bk1.png')} />
-                    {/* </View> */}
+                    <Image style={{ height: 22 }} source={require('./assets/arrow1.png')} />
+                    <Text style={{ color: '#fff', fontSize: 22, fontFamily: 'MontserratAlternates-Medium', }}> Companies </Text>
+                    <Image source={require('./assets/bk1.png')} />
                 </View>
-                <View style={{ marginTop: height * 0.03, flexDirection: 'row' ,}}>
+                <View style={{ marginTop: height * 0.03, flexDirection: 'row', }}>
                     <View style={{ position: 'absolute', top: 18, left: 10 }}>
                         <Image source={require('./assets/search.png')} />
                     </View>
@@ -79,13 +74,10 @@ export default function Companies(props) {
                     </View>
                 </View>
             </LinearGradient>
-
-
             <FlatList style={{ marginTop: -45, padding: 5 }}
                 data={DATA}
                 renderItem={renderItem}
             />
-
         </View>
     )
 }
@@ -131,5 +123,4 @@ const styles = StyleSheet.create({
         // justifyContent: 'space-between',
         alignItems: 'center'
     }
-
 });
