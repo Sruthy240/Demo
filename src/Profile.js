@@ -3,8 +3,6 @@ import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, SafeAreaVie
 import LinearGradient from 'react-native-linear-gradient'
 import { height, width } from './Constant/constant'
 import Header from './Components/Header'
-
-
 export default class Profile extends Component {
   render() {
     console.log(height * 0.8);
@@ -18,6 +16,10 @@ export default class Profile extends Component {
         }}>
           <View style={{ backgroundColor: '#fff', marginTop: height * 0.08, alignItems: 'center', borderRadius: 10, marginVertical: 10, }}>
             <Image style={{ width: width * 0.29, height: width * 0.29, borderRadius: width * 0.15, marginTop: -width * 0.15, }} source={require('./assets/salma.png')} />
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Contact')}>
+              <Image style={{ position: 'absolute', bottom: 20, left: 145 }}
+                source={require('./assets/bk4.png')} />
+            </TouchableOpacity>
             <Text style={{ fontFamily: 'MontserratAlternates-Bold', fontSize: 22, marginTop: 8 }}>Salma Saeed</Text>
             <View style={{ flexDirection: 'row', marginVertical: 8 }}>
               <Image source={require('./assets/nurse2.png')} />
@@ -76,5 +78,4 @@ const styles = StyleSheet.create({
     position: 'absolute'
     // paddingVertical: 50,
   },
-
 })

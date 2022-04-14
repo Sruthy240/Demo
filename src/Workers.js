@@ -104,8 +104,10 @@ export default function Workers(props) {
             <Image style={{ width: width * 0.157, height: height * 0.073, }}
                 source={item.image} />
             <View style={{ flexDirection: 'column', alignSelf: 'center', flex: 1, marginLeft: width * 0.05 }}>
-                
+                <TouchableOpacity onPress={ () => props.navigation.navigate('Profile')}>
                 <Text style={{ fontSize: 16, fontWeight: 'bold', fontFamily: 'MontserratAlternates-Regular' }}>{item.title} </Text>
+                </TouchableOpacity>
+     
                 <Text style={{ fontSize: 10, fontFamily: 'MontserratAlternates-Regular', marginTop: 2, }}>{item.company}</Text>
                 <View style={{ flexDirection: 'row', }}>
                     <Image style={{ width: 9.91, height: 13.5, marginTop: 4 }}

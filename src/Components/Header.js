@@ -15,9 +15,7 @@ export default class Header extends Component {
 
                 <Image style={{ height: 19.5, width: 15.17, right: 10 }}
                     source={require('./../assets/bk1.png')} />
-
             </View>
-
         )
     }
 }
@@ -25,7 +23,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#eee',
-
     },
     view1: {
         flexDirection: 'row',
@@ -40,7 +37,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         color: '#fff',
         fontFamily: 'MontserratAlternates-Regular',
-       
+
     },
     view2: {
 
