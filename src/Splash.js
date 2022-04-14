@@ -5,9 +5,9 @@ import { height, width } from './Constant/constant'
 
 
 class Splash extends Component {
-    componentDidMount() {
-        setTimeout(() => this.props.navigation.navigate('Screens'), 2000)
-    }
+    // componentDidMount() {
+    //     setTimeout(() => this.props.navigation.navigate('Screens'), 2000)
+    // }
 
     render() {
 

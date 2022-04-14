@@ -3,3 +3,4 @@ Pods
 Podfile.lock
 package-lock.json
 build
+android/.gradle
