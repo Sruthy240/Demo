@@ -5,7 +5,7 @@ import { height, width } from './Constant/constant'
 import Header from './Components/Header'
 export default class Profile extends Component {
   render() {
-    console.log(height * 0.8);
+    // console.log(height * 0.8);
     return (
       <SafeAreaView style={styles.container}>
         <LinearGradient style={styles.blueContainer} start={{ x: 1, y: 0 }} end={{ x: 1, y: 1 }} colors={['#3882D8', '#33A7C1', '#2ECBAA']} >

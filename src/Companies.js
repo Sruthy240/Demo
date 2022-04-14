@@ -58,7 +58,6 @@ export default function Companies(props) {
             <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0.5, y: 1 }} colors={['#2ECBAA', '#339DC9', '#367FDD']}
                 style={[styles.blueContainer,]}>
                 <View style={{ flexDirection: 'row', width: width, paddingHorizontal: width * 0.05, alignItems: 'center', justifyContent: 'space-between', height: height * 0.07 }}>
-
                     <Image style={{ height: 22 }} source={require('./assets/arrow1.png')} />
                     <Text style={{ color: '#fff', fontSize: 22, fontFamily: 'MontserratAlternates-Medium', }}> Companies </Text>
                     <Image source={require('./assets/bk1.png')} />
