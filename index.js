@@ -23,4 +23,4 @@ import FlatListOne from './src/FlatlistOne'
 import Profile2 from './src/Profile2';
 import Screens from './src/Screens';
 
-AppRegistry.registerComponent(appName, () => Contact);
+AppRegistry.registerComponent(appName, () => Service);

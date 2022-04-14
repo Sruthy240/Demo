@@ -7,7 +7,7 @@ import Header from './Components/Header'
 
 export default class Profile extends Component {
   render() {
-    console.log(width * 0.735);
+    console.log(height * 0.8);
     return (
       <SafeAreaView style={styles.container}>
         <LinearGradient style={styles.blueContainer} start={{ x: 1, y: 0 }} end={{ x: 1, y: 1 }} colors={['#3882D8', '#33A7C1', '#2ECBAA']} >
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   blueContainer: {
-    width: '100%',
+    width: width,
     height: '32%',
     backgroundColor: '#387FDA',
     // alignItems: 'center',
