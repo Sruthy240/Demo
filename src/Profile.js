@@ -16,11 +16,12 @@ export default class Profile extends Component {
         }}>
           <View style={{ backgroundColor: '#fff', marginTop: height * 0.08, alignItems: 'center', borderRadius: 10, marginVertical: 10, }}>
             <Image style={{ width: width * 0.29, height: width * 0.29, borderRadius: width * 0.15, marginTop: -width * 0.15, }} source={require('./assets/salma.png')} />
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Contact')}>
-              <Image style={{ position: 'absolute', bottom: 20, left: 145 }}
+              <Image style={{ position: 'absolute', top: 20, right : 20 }}
                 source={require('./assets/bk4.png')} />
-            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Contact')}>
             <Text style={{ fontFamily: 'MontserratAlternates-Bold', fontSize: 22, marginTop: 8 }}>Salma Saeed</Text>
+            </TouchableOpacity>
+           
             <View style={{ flexDirection: 'row', marginVertical: 8 }}>
               <Image source={require('./assets/nurse2.png')} />
               <Text style={{ fontSize: 16, fontFamily: 'MontserratAlternates-Light', }}> Nursing </Text>
