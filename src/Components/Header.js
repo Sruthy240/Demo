@@ -6,13 +6,10 @@ export default class Header extends Component {
         console.log(this.props)
         const { title } = this.props
         return (
-
             <View style={styles.view1}>
                 <Image style={{ left: 10, height: 18, width: 4 }}
                     source={require('./../assets/dot.png')} />
-
                 <Text style={styles.text}> {title}</Text>
-
                 <Image style={{ height: 19.5, width: 15.17, right: 10 }}
                     source={require('./../assets/bk1.png')} />
             </View>
@@ -37,17 +34,14 @@ const styles = StyleSheet.create({
         fontSize: 22,
         color: '#fff',
         fontFamily: 'MontserratAlternates-Regular',
-
     },
     view2: {
-
         backgroundColor: '#387FDA',
         height: width * 4,
         width: width * 4,
         borderRadius: width * 3,
         position: 'absolute',
         top: -width * 3.25,
-
     },
 
 })

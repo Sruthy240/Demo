@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { View, StyleSheet, FlatList, Text, Image, TouchableOpacity } from 'react-native'
 import { height, width } from './Constant/constant'
 import LinearGradient from 'react-native-linear-gradient'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const pageStyle = isActive =>
     isActive ? { backgroundColor: '#3D989F' } : { backgroundColor: 'gray' }
@@ -87,8 +88,11 @@ export default function Screens(props) {
             index: welcomeListIndex < 2 ? welcomeListIndex + 1 : welcomeListIndex
         })
     }
+    const handleGetStarted = async () => {
+        await AsyncStorage.setItem("getStart", 'true')
+        props.navigation.navigate('Service')
+    }
     return (
-
         <View style={{ alignItems: 'center', }}>
             <FlatList style={{ marginTop: 150, height: height * 0.65, }}
                 ref={welcomeList}
@@ -111,14 +115,21 @@ export default function Screens(props) {
                     )
                 }} />
             {welcomeListIndex == 2 ? <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.button} colors={['#2ECBAA', '#33A5C2', '#387FDA']} >
-                <TouchableOpacity onPress={()=> props.navigation.navigate('Service') }>
+                <TouchableOpacity onPress={handleGetStarted}>
                     <Text style={styles.buttonText}> Start </Text>
                 </TouchableOpacity>
+
+                {/* <TouchableOpacity onPress={async () => {
+                    await AsyncStorage.setItem("getStart", 'true')
+                    props.navigation.navigate('Service')
+                }}>
+                    <Text style={styles.buttonText}> Start </Text>
+                </TouchableOpacity> */} 
+                
             </LinearGradient> : <TouchableOpacity
                 onPress={() => pageScroll()}>
                 <Text style={{ fontFamily: 'MontserratAlternates-Regular', fontSize: 16, color: '#C8C8E9' }}> Skip </Text>
             </TouchableOpacity>}
-
         </View>
     )
 }
@@ -168,7 +179,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         // marginTop: height * 0.01,
         alignSelf: 'center',
-        
+
     },
     buttonText: {
         color: '#fff',

@@ -1,38 +1,38 @@
-import React,{Component} from 'react'
-import { View, StyleSheet, Text, FlatList} from 'react-native'
+import React, { Component } from 'react'
+import { View, StyleSheet, Text, FlatList } from 'react-native'
 export default class new extends Component{
 
-    constructor (){
+    constructor(){
         super()
         this.state = {
-            DATA : []
+            DATA: []
         }
     }
-    getData (){
-        fetch ('')
-        .then( (response) => response.json())
-        .then ( (response) => {
-            this.setState({ DATA :  response})
-            console.log(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+    getData(){
+        fetch('')
+            .then((response) => response.json())
+            .then((response) => {
+                this.setState({ DATA: response })
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
-    componentDidMount (){
+    componentDidMount(){
         this.getData()
     }
     render(){
-const renderItem = ( {item}) => (
-    <View>
-        <Text>{item.title}</Text>
-    </View>
-)
-        return(
+        const renderItem = ({ item }) => (
             <View>
-                <FlatList 
-                data = {this.state.DATA}
-                renderItem = {renderItem}/>
+                <Text>{item.title}</Text>
+            </View>
+        )
+        return (
+            <View>
+                <FlatList
+                    data={this.state.DATA}
+                    renderItem={renderItem} />
             </View>
         )
     }

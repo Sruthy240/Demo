@@ -13,7 +13,7 @@ export default class Profile2 extends Component {
               <Image source = {require('./assets/bk1.png')}/>
               </View>
   
-              
+            
             </View>
             
           

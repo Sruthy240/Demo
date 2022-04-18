@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Image, SafeAreaView } from 'react-native'
+import { View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { height, width } from './Constant/constant'
-
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 class Splash extends Component {
-    componentDidMount() {
-        setTimeout(() => this.props.navigation.navigate('Screens'), 2000)
+    async componentDidMount() {
+        // await AsyncStorage.getItem("getStart")
+        const status = await AsyncStorage.getItem("getStart")
+        console.log(status);
+        setTimeout(() => this.props.navigation.navigate(status ? 'Service' : 'Screens'), 2000)
     }
     render() {
         return (<LinearGradient colors={['#387FDA', '#33A4C3', '#2ECBAA']}
